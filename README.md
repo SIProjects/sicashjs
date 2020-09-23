@@ -1,26 +1,26 @@
-The QTUM JavaScript library for Smart Contract development.
+The SICASH JavaScript library for Smart Contract development.
 
-See [documentation](https://qtumproject.github.io/qtumjs-doc/).
+See [documentation](https://sicashproject.github.io/sicashjs-doc/).
 
-See [中文 API 文档](https://qtumproject.github.io/qtumjs-doc-cn/).
+See [中文 API 文档](https://sicashproject.github.io/sicashjs-doc-cn/).
 
-See [companion tutorial](https://github.com/qtumproject/qtumbook/blob/master/en/part2/erc20-js.md).
+See [companion tutorial](https://github.com/sicashproject/sicashbook/blob/master/en/part2/erc20-js.md).
 
 # Install
 
 ```
-npm install qtumjs
+npm install sicashjs
 ```
 
 This is a sample code snippet that transfer ERC20 tokens:
 
 ```js
-import { QtumRPC } from "qtumjs"
+import { SICashRPC } from "sicashjs"
 
 const repoData = require("./solar.json")
-const qtum = new Qtum("http://qtum:test@localhost:3889", repoData)
+const sicash = new SICash("http://sicash:test@localhost:3889", repoData)
 
-const myToken = qtum.contract(
+const myToken = sicash.contract(
   "zeppelin-solidity/contracts/token/CappedToken.sol",
 )
 
@@ -37,7 +37,7 @@ async function transfer(fromAddr, toAddr, amount) {
 }
 ```
 
-The [full source code](https://github.com/qtumproject/qtumbook-mytoken-qtumjs-cli).
+The [full source code](https://github.com/sicashproject/sicashbook-mytoken-sicashjs-cli).
 
 > This example uses async/await (supported natively by Node 8+).
 
@@ -45,18 +45,18 @@ The [full source code](https://github.com/qtumproject/qtumbook-mytoken-qtumjs-cl
 
 ```
 docker run -it --rm \
-  --name qtumjs \
+  --name sicashjs \
   -v `pwd`:/dapp \
   -p 3889:3889 \
-  hayeah/qtumportal
+  hayeah/sicashportal
 ```
 
-Configure QTUM_RPC for deployment tool:
+Configure SICASH_RPC for deployment tool:
 
 Enter into container:
 
 ```
-docker exec -it qtumjs sh
+docker exec -it sicashjs sh
 ```
 
 Generate initial blocks:
@@ -73,8 +73,8 @@ qcli getbalance
 Deploy test contracts:
 
 ```
-export QTUM_RPC=http://qtum:test@localhost:3889
-export QTUM_SENDER=qUbxboqjBRp96j3La8D1RYkyqx5uQbJPoW
+export SICASH_RPC=http://sicash:test@localhost:3889
+export SICASH_SENDER=qUbxboqjBRp96j3La8D1RYkyqx5uQbJPoW
 
 sh deploy-test-contracts.sh
 ```

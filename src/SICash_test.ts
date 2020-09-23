@@ -3,21 +3,21 @@ import "mocha"
 import { assert } from "chai"
 
 import { rpcURL, repoData } from "./test"
-import { Qtum } from "./Qtum"
+import { SICash } from "./SICash"
 import { Contract } from "./Contract"
 
-describe("Qtum", () => {
-  const qtum = new Qtum(rpcURL, repoData)
+describe("SICash", () => {
+  const sicash = new SICash(rpcURL, repoData)
 
   it("can instantiate a contract", () => {
-    const contract = qtum.contract("test/contracts/Methods.sol")
+    const contract = sicash.contract("test/contracts/Methods.sol")
     assert.instanceOf(contract, Contract)
   })
 
   it("throws an error if contract is not known", () => {
     // assertThrow
     assert.throw(() => {
-      qtum.contract("test/contracts/Unknown.sol")
+      sicash.contract("test/contracts/Unknown.sol")
     })
   })
 })

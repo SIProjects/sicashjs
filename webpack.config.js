@@ -18,9 +18,9 @@ module.exports = {
     extensions: [".ts", ".js"]
   },
   output: {
-    filename: "qtum.js",
+    filename: "sicash.js",
     path: path.resolve(__dirname, "dist"),
-    library: "Qtum",
+    library: "SICash",
     libraryTarget: "umd"
   }
 };

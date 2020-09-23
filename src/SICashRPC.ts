@@ -1,4 +1,4 @@
-import { QtumRPCRaw } from "./QtumRPCRaw"
+import { SICashRPCRaw } from "./SICashRPCRaw"
 import { Hash } from "crypto"
 
 
@@ -55,7 +55,7 @@ export interface IRPCSendToContractRequest {
   datahex: string
 
   /**
-   * The amount in QTUM to send. eg 0.1, default: 0
+   * The amount in SICASH to send. eg 0.1, default: 0
    */
   amount?: number | string
 
@@ -65,7 +65,7 @@ export interface IRPCSendToContractRequest {
   gasLimit?: number
 
   /**
-   * Qtum price per gas unit, default: 0.00000001, min:0.00000001
+   * SICash price per gas unit, default: 0.00000001, min:0.00000001
    */
   gasPrice?: number | string
 
@@ -86,7 +86,7 @@ export interface IRPCSendToContractResult {
    */
   txid: string
   /**
-   * QTUM address of the sender.
+   * SICASH address of the sender.
    */
   sender: string
   /**
@@ -188,7 +188,7 @@ export interface IRPCGetTransactionReceiptRequest {
 }
 
 /**
- * Transaction receipt returned by qtumd
+ * Transaction receipt returned by sicashd
  */
 export interface IRPCGetTransactionReceiptBase {
   blockHash: string
@@ -252,7 +252,7 @@ export interface ILogFilter {
 }
 
 /**
- * The raw log data returned by qtumd, not ABI decoded.
+ * The raw log data returned by sicashd, not ABI decoded.
  */
 export interface ILogEntry extends IRPCGetTransactionReceiptBase {
   /**
@@ -309,7 +309,7 @@ export interface IPromiseCancel<T> extends Promise<T> {
   cancel: () => void
 }
 
-export class QtumRPC extends QtumRPCRaw {
+export class SICashRPC extends SICashRPCRaw {
   private _hasTxWaitSupport: boolean | undefined
 
   public getBlockChainInfo(): Promise<IGetBlockChainInfoResult> {

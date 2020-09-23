@@ -1,14 +1,14 @@
-import { QtumRPC } from "./QtumRPC"
+import { SICashRPC } from "./SICashRPC"
 import { IContractsRepoData, ContractsRepo } from "./ContractsRepo"
 import { Contract } from "./Contract"
 
 /**
- * The `Qtum` class is an instance of the `qtumjs` API.
+ * The `SICash` class is an instance of the `sicashjs` API.
  *
- * @param providerURL URL of the qtumd RPC service.
+ * @param providerURL URL of the sicashd RPC service.
  * @param repoData Information about Solidity contracts.
  */
-export class Qtum extends QtumRPC {
+export class SICash extends SICashRPC {
   private repo: ContractsRepo
 
   constructor(providerURL: string, repoData?: IContractsRepoData) {

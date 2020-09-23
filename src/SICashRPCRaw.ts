@@ -9,7 +9,7 @@ const URL = require("url-parse")
 
 import debug from "debug"
 
-const log = debug("qtumjs:rpc")
+const log = debug("sicashjs:rpc")
 
 import { sleep } from "./sleep"
 
@@ -31,7 +31,7 @@ export interface IRPCCallOption {
   cancelToken?: CancelToken
 }
 
-export class QtumRPCRaw {
+export class SICashRPCRaw {
   private idNonce: number
   private _api: AxiosInstance
 
